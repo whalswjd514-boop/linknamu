@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
 
 // TODO: 실제 데이터로 교체 (지금은 보여 주기용 더미 값)
@@ -6,12 +6,6 @@ const profile = {
   name: "조민정",
   bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많은 개발자",
 };
-
-const links = [
-  { title: "🌏 깃허브", url: "https://github.com/whalswjd514-boop" },
-  { title: "❤️ 네이버", url: "https://www.naver.com/" },
-  { title: "⭐ 인스타그램", url: "https://www.instagram.com/" },
-];
 
 export default function Home() {
   return (
@@ -26,13 +20,7 @@ export default function Home() {
       />
       <div className="relative flex w-full max-w-md flex-col gap-12">
         <Profile name={profile.name} bio={profile.bio} />
-        <ul className="flex flex-col gap-4">
-          {links.map((link) => (
-            <li key={link.title}>
-              <LinkCard title={link.title} url={link.url} />
-            </li>
-          ))}
-        </ul>
+        <LinkList />
       </div>
     </main>
   );
