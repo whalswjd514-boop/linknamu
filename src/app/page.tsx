@@ -4,21 +4,29 @@ import Profile from "@/components/Profile";
 // TODO: 실제 데이터로 교체 (지금은 보여 주기용 더미 값)
 const profile = {
   name: "조민정",
-  bio: "AI를 잘 활용하는 개발자",
+  bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많은 개발자",
 };
 
 const links = [
-  { title: "GitHub", url: "https://github.com" },
-  { title: "Naver", url: "https://www.naver.com" },
-  { title: "Instagram", url: "https://www.instagram.com" },
+  { title: "🌏 깃허브", url: "https://github.com/whalswjd514-boop" },
+  { title: "❤️ 네이버", url: "https://www.naver.com/" },
+  { title: "⭐ 인스타그램", url: "https://www.instagram.com/" },
 ];
 
 export default function Home() {
   return (
-    <main className="flex flex-1 justify-center bg-zinc-50 px-4 py-12 dark:bg-black">
-      <div className="flex w-full max-w-md flex-col gap-8">
+    <main className="relative flex flex-1 justify-center overflow-hidden bg-gradient-to-b from-[#fffaf2] via-[#ffeedd] to-[#ffd9bf] px-6 py-16 sm:py-24">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#ffc9a3]/50 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#ffe0b8]/60 blur-3xl"
+      />
+      <div className="relative flex w-full max-w-md flex-col gap-12">
         <Profile name={profile.name} bio={profile.bio} />
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-4">
           {links.map((link) => (
             <li key={link.title}>
               <LinkCard title={link.title} url={link.url} />
